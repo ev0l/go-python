@@ -8,9 +8,9 @@ def back(json):
     return
     
 
-bridge.call('foo', back, '{"NumOne": 1, "NumTwo": 2}');
+bridge.call('foo', back, '{"NumOne": 5, "NumTwo": 2}');
 
 while 1 :
     print('Yo!')
-    #time.sleep(3)
+    time.sleep(1)
     

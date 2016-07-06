@@ -10,6 +10,8 @@ package main
 // PyObject * Py_BuildValue_s(char * c);
 import "C"
 
+import "runtime"
+
 type Pycall struct {
 	funcname *C.char
 	callback *C.PyObject
@@ -21,6 +23,8 @@ func call(self, args *C.PyObject) *C.PyObject {
 	var funcname *C.char
 	var callback *C.PyObject
 	var json *C.char
+
+	runtime.GOMAXPROCS(4)
 
 	if C.PyArg_ParseTuple_sOs(args, &funcname, &callback, &json) == 0 {
 		return nil
