@@ -1,3 +1,4 @@
 Vagrantfile
 .vagrant
 bridge.so
+bridge.h
